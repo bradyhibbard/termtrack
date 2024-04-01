@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TermTracker1.Views.Notes.NotesListPage"
+             Title="Notes">
+
+        <Grid Padding="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" /> <!-- Class Title -->
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" /> <!-- Date Range -->
+            <RowDefinition Height="*" />    <!-- ScrollView for displaying notes -->
+            <RowDefinition Height="Auto" /> <!-- Add Note Button -->
+        </Grid.RowDefinitions>
+
+        <!-- Class Title and Date Range -->
+        <Label Grid.Row="0"
+               Text="{Binding Title}"
+               FontSize="Large"
+               HorizontalOptions="Center"/>
+
+        <StackLayout Grid.Row="1" Orientation="Horizontal" HorizontalOptions="Center">
+                    <Label Text="{Binding StartDate, StringFormat='{0:MM/dd/yyyy}'}" />
+                    <Label Text=" - " />
+                    <Label Text="{Binding EndDate, StringFormat='{0:MM/dd/yyyy}'}" />
+        </StackLayout>
+
+        <!-- Notes Section Title -->
+        <Label Grid.Row="2"
+               Text="Notes"
+               FontSize="Medium"
+               HorizontalOptions="Start"/>
+
+        <!-- ScrollView for displaying notes -->
+        <ScrollView Grid.Row="3" VerticalOptions="FillAndExpand">
+            <StackLayout x:Name="notesStack" Padding="10">
+                <!-- Dynamically added note items will go here -->
+            </StackLayout>
+        </ScrollView>
+
+        <!-- Add Note Button -->
+        <Button Grid.Row="4"
+                Text="ADD NOTE"
+                BackgroundColor="Black"
+                TextColor="White"
+                Margin="0,20"
+                Command="{Binding AddNoteCommand}"
+                Clicked="OnAddNoteButtonClicked"/>
+    </Grid>
+
+
+</ContentPage>

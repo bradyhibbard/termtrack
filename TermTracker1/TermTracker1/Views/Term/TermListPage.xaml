@@ -1,0 +1,15 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TermTracker1.Views.Term.TermListPage"
+             Title="Term Select">
+
+    <StackLayout VerticalOptions="FillAndExpand" Padding="20">
+        <Label Text="Your School Term" FontSize="Large" HorizontalTextAlignment="Center" />
+        
+        <StackLayout x:Name="termsStack" VerticalOptions="FillAndExpand">
+            <!-- Dynamically added term buttons will go here -->
+        </StackLayout>
+        
+        <Button Text="ADD A TERM" Clicked="OnAddTermButtonClicked"/>
+    </StackLayout>
+</ContentPage>

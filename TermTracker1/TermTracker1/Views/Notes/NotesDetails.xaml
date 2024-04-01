@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TermTracker1.Views.Notes.NotesDetails"
+             Title="{Binding CourseTitle}">
+
+    <Grid Padding="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0"
+               Text="{Binding CourseTitle}"
+               FontSize="Large"
+               HorizontalOptions="Center"/>
+
+        <StackLayout Grid.Row="1" Orientation="Horizontal" HorizontalOptions="Center">
+            <Label Text="{Binding StartDate, StringFormat='{0:MM/dd/yyyy}'}" />
+            <Label Text=" - " />
+            <Label Text="{Binding EndDate, StringFormat='{0:MM/dd/yyyy}'}" />
+        </StackLayout>
+
+        <StackLayout Grid.Row="2"
+                     Padding="0,20,0,20">
+            <Label Text="{Binding Title}"
+                   FontSize="Medium"/>
+            <Label Text="{Binding Content}"
+                   FontSize="Small"/>
+        </StackLayout>
+
+        <Button Grid.Row="3"
+                Text="SHARE NOTES"
+                BackgroundColor="Black"
+                TextColor="White"
+                Command="{Binding ShareNoteCommand}"
+                Clicked="OnShareNoteClicked"/>
+        
+        <Button Grid.Row="4"
+                Text="EDIT"
+                BackgroundColor="Black"
+                TextColor="White"
+                Command="{Binding EditNoteCommand}"
+                Clicked="EditNoteClicked"
+                Margin="0,10"/>
+
+        <Button Grid.Row="5"
+                Text="DELETE NOTE"
+                BackgroundColor="White"
+                TextColor="Red"
+                BorderColor="Black"
+                BorderWidth="1"
+                Command="{Binding DeleteNoteCommand}"
+                Clicked="DeleteNoteClicked"
+                Margin="0,10"/>
+    </Grid>
+</ContentPage>

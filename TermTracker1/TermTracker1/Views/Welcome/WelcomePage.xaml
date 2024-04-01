@@ -1,0 +1,25 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TermTracker1.Views.Welcome.WelcomePage"
+             Title="Register New Term">
+
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center" Padding="30">
+            <Label Text="Welcome"
+                   FontSize="Large"
+                   HorizontalOptions="Center"
+                   Margin="0,0,0,10"/>
+            <Label Text="Student"
+                   FontSize="Large"
+                   TextColor="Pink"
+                   HorizontalOptions="Center"
+                   Margin="0,0,0,20"/>
+            <Button x:Name="addTermButton"
+                    Text="ADD NEW TERM"
+                    BackgroundColor="Black"
+                    TextColor="White"
+                    Margin="0,0,0,10"
+                    HorizontalOptions="FillAndExpand"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

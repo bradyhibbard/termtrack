@@ -1,0 +1,54 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+    <ProduceReferenceAssemblyInOutDir>true</ProduceReferenceAssemblyInOutDir>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2662" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.8.1" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.9.172" />
+    <PackageReference Include="SQLiteNetExtensions" Version="2.1.0" />
+    <PackageReference Include="SQLiteNetExtensions.Async" Version="2.1.0" />
+    <PackageReference Include="Plugin.LocalNotification" Version="9.2.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Models\" />
+    <None Remove="Views\" />
+    <None Remove="ViewModels\" />
+    <None Remove="Services\" />
+    <None Remove="Data\" />
+    <None Remove="Helpers\" />
+    <None Remove="Resources\" />
+    <None Remove="Views\Login\" />
+    <None Remove="Views\SignUp\" />
+    <None Remove="Views\Welcome\" />
+    <None Remove="Views\Courses\" />
+    <None Remove="Views\Assessment\" />
+    <None Remove="Views\Notes\" />
+    <None Remove="Views\Term\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\" />
+    <Folder Include="Views\" />
+    <Folder Include="ViewModels\" />
+    <Folder Include="Services\" />
+    <Folder Include="Data\" />
+    <Folder Include="Helpers\" />
+    <Folder Include="Resources\" />
+    <Folder Include="Views\Login\" />
+    <Folder Include="Views\SignUp\" />
+    <Folder Include="Views\Welcome\" />
+    <Folder Include="Views\Courses\" />
+    <Folder Include="Views\Assessment\" />
+    <Folder Include="Views\Notes\" />
+    <Folder Include="Views\Term\" />
+  </ItemGroup>
+</Project>

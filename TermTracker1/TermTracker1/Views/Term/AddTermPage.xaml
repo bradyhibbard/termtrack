@@ -1,0 +1,35 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TermTracker1.Views.Term.AddTermPage"
+             Title="Register Term">
+
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center" Padding="30">
+            <Label Text="Add a Term" 
+                   FontSize="Large" 
+                   HorizontalOptions="Center"
+                   Margin="0,0,0,20"/>
+
+            <Button x:Name="springTermButton" 
+                    Text="SPRING TERM" 
+                    BackgroundColor="Black" 
+                    TextColor="White"
+                    Margin="0,0,0,10"
+                    Clicked="OnSpringTermButtonClicked"/>
+
+            <Button x:Name="summerTermButton" 
+                    Text="SUMMER TERM" 
+                    BackgroundColor="Black" 
+                    TextColor="White"
+                    Margin="0,0,0,10"
+                    Clicked="OnSummerTermButtonClicked"/>
+
+            <Button x:Name="fallTermButton" 
+                    Text="FALL TERM" 
+                    BackgroundColor="Black" 
+                    TextColor="White"
+                    Margin="0,0,0,10"
+                    Clicked="OnFallTermButtonClicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TermTracker1.Views.Notes.NotesPage"
+             Title="Notes">
+
+    <StackLayout Padding="20" VerticalOptions="FillAndExpand">
+        <Label Text="Class 1 Title"
+               FontSize="Large"
+               HorizontalOptions="Center"/>
+        <Label Text="Start Date - End Date"
+               FontSize="Small"
+               HorizontalOptions="Center"
+               Margin="0,0,0,20"/>
+
+        <Entry x:Name="noteTitleEntry" Placeholder="Note Title" />
+        <Editor x:Name="noteContentEditor" Placeholder="Add A Note Here" HeightRequest="100"/>
+
+        <Button Text="SHARE NOTES"
+                BackgroundColor="Black"
+                TextColor="White"
+                Margin="0,10"
+                Clicked="OnShareNotesClicked" />
+        <Button Text="SAVE"
+                BackgroundColor="Black"
+                TextColor="White"
+                Margin="0,10"
+                Clicked="OnSaveClicked" />
+        <Button x:Name="deleteNoteButton"
+                Text="DELETE NOTE"
+                BackgroundColor="White"
+                TextColor="Red"
+                BorderColor="Black"
+                BorderWidth="1"
+                IsVisible="False"
+                Clicked="OnDeleteNoteClicked" />
+    </StackLayout>
+
+</ContentPage>

@@ -1,0 +1,34 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TermTracker1.Views.Courses.EditCoursePage"
+             Title="Edit Course Details">
+    <StackLayout Padding="20">
+
+        <Entry x:Name="title" Placeholder="Course Title" />
+
+        <DatePicker x:Name="startDatePicker" />
+        <DatePicker x:Name="endDatePicker" />
+
+        <Entry x:Name="instructorName" Placeholder="Course Instructor Name" />
+        <Entry x:Name="instructorEmail" Placeholder="Course Instructor Email" Keyboard="Email" />
+        <Entry x:Name="instructorPhone" Placeholder="Course Instructor Phone" Keyboard="Telephone" />
+
+        <Editor x:Name="descriptionEditor" Placeholder="Class Description" />
+
+        <Picker x:Name="statusPicker" Title="Class Status">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Plan to take</x:String>
+                    <x:String>Enroll</x:String>
+                    <x:String>Drop</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+
+        <Button Text="UPDATE COURSE" 
+                BackgroundColor="Black" 
+                TextColor="White"
+                Clicked="UpdateCourseButton_Clicked" />
+
+    </StackLayout>
+</ContentPage>

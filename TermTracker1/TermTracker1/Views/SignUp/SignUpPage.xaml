@@ -1,0 +1,48 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TermTracker1.Views.SignUp.SignUpPage"
+             Title="Sign Up">
+
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center" Padding="30">
+            <Label Text="Sign Up" 
+                   FontSize="Large" 
+                   HorizontalOptions="Center"
+                   Margin="0,0,0,20"/>
+            
+            <Entry x:Name="emailEntry" 
+                   Placeholder="Email"
+                   Keyboard="Email"
+                   Margin="0,0,0,10"/>
+                   
+            <Entry x:Name="usernameEntry" 
+                   Placeholder="Username"
+                   Margin="0,0,0,10"/>
+                   
+            <Entry x:Name="firstNameEntry" 
+                   Placeholder="First Name"
+                   Margin="0,0,0,10"/>
+                   
+            <Entry x:Name="lastNameEntry" 
+                   Placeholder="Last Name"
+                   Margin="0,0,0,10"/>
+                   
+            <Entry x:Name="passwordEntry" 
+                   Placeholder="Password" 
+                   IsPassword="true"
+                   Margin="0,0,0,10"/>
+                   
+            <Entry x:Name="repeatPasswordEntry" 
+                   Placeholder="Repeat Password" 
+                   IsPassword="true"
+                   Margin="0,0,0,20"/>
+                   
+            <Button x:Name="signUpButton" 
+                    Text="SIGN UP" 
+                    BackgroundColor="Black" 
+                    TextColor="White"
+                    Margin="0,0,0,10"
+                    HorizontalOptions="FillAndExpand"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

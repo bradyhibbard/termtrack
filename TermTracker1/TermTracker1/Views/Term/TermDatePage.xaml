@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TermTracker1.Views.Term.TermDatePage"
+             Title="Add Term Dates">
+
+    <StackLayout Padding="20" VerticalOptions="Center">
+        <Label Text="Start Date" Margin="0,0,0,5"/>
+        <DatePicker x:Name="startDatePicker" Margin="0,0,0,20"/>
+
+        <Label Text="End Date" Margin="0,0,0,5"/>
+        <DatePicker x:Name="endDatePicker" Margin="0,0,0,20"/>
+
+        <Button Text="SAVE"
+                BackgroundColor="Black"
+                TextColor="White"
+                HorizontalOptions="FillAndExpand"
+                Clicked="OnSaveClicked"/>
+    </StackLayout>
+
+</ContentPage>

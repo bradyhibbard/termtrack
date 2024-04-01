@@ -1,0 +1,62 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TermTracker1.Views.Courses.CourseListPage"
+             Title="Term Course Schedule">
+    <Grid VerticalOptions="FillAndExpand">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Label Text="Term Course Schedule"
+               FontSize="Large"
+               HorizontalOptions="Center"
+               Margin="0,10"
+               Grid.Row="0"/>
+
+        <Label Text="Term Dates"
+               FontSize="Medium"
+               HorizontalOptions="Center"
+               Grid.Row="1" />
+
+        <Label Text="{Binding SelectedTerm.StartDate, StringFormat='Start Date: {0:d}'}"
+               FontSize="Small"
+               HorizontalOptions="Center"
+               Grid.Row="2" />
+
+        <Label Text="{Binding SelectedTerm.EndDate, StringFormat='End Date: {0:d}'}"
+               FontSize="Small"
+               HorizontalOptions="Center"
+               Grid.Row="3" />
+
+        <ScrollView Grid.Row="4">
+            <StackLayout x:Name="coursesStack" Padding="20">
+                <!-- Dynamically added course items will go here -->
+            </StackLayout>
+        </ScrollView>
+
+        <!-- ADD A COURSE button with black background -->
+        <Button Text="ADD A COURSE"
+                x:Name="addCourseButton"
+                BackgroundColor="Black" 
+                TextColor="White"
+                Clicked="OnAddCourseButtonClicked"
+                Margin="20,0"
+                Grid.Row="5"/>
+
+        <!-- DELETE TERM button with white background and red text -->
+        <Button Text="DELETE TERM" 
+                BackgroundColor="White" 
+                TextColor="Red"
+                BorderColor="Black"
+                BorderWidth="2"
+                Clicked="OnDeleteTermButtonClicked"
+                Margin="20,0,20,20"
+                Grid.Row="6"/>
+    </Grid>
+</ContentPage>
