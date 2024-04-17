@@ -4,32 +4,49 @@
              x:Class="TermTracker1.Views.Assessment.AddAssessment"
              Title="Add Assessment">
 
-    <Grid VerticalOptions="FillAndExpand">
+    <Grid VerticalOptions="FillAndExpand" Padding="20">
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <StackLayout Grid.Row="0" Padding="20">
-            <Entry x:Name="title" Placeholder="Assessment Title" />
-            <DatePicker x:Name="dateTakenPicker" Format="D" />
-            <Entry x:Name="score" Placeholder="Score" Keyboard="Numeric" />
+        <Label Grid.Row="0" Text="Assessment Title" />
+        <Entry Grid.Row="1" x:Name="title" Placeholder="Enter title" />
+        
+        <Label Grid.Row="2" Text="Date" />
+        <DatePicker Grid.Row="3" x:Name="dateTakenPicker" Format="D" />
+        
+        <Label Grid.Row="4" Text="Score" />
+        <Entry Grid.Row="5" x:Name="score" Placeholder="Enter score" Keyboard="Numeric" />
 
-            <!-- You might want to use a DatePicker for Date Taken instead -->
-        </StackLayout>
+        <!-- Set Notification Section -->
+        <Label Grid.Row="6" Text="Set Notification" />
+        <Picker Grid.Row="7" x:Name="notificationPicker">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>1 day before</x:String>
+                    <x:String>2 days before</x:String>
+                    <x:String>1 week before</x:String>
+                    <x:String>2 weeks before</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
 
         <!-- SAVE Button -->
-        <Button Grid.Row="1"
+        <Button Grid.Row="8"
                 Text="SAVE"
                 BackgroundColor="Black"
                 TextColor="White"
                 VerticalOptions="End"
                 Clicked="OnAddAssessmentClicked"
-                Margin="10,0" /> <!-- Margin added to create space around the button -->
+                Margin="10" />
 
         <!-- DELETE Button -->
-        <Button Grid.Row="2"
+        <Button Grid.Row="9"
                 x:Name="deleteButton"
                 Text="DELETE ASSESSMENT"
                 BackgroundColor="White"
@@ -39,7 +56,7 @@
                 IsVisible="False"
                 Clicked="OnDeleteAssessmentClicked"
                 VerticalOptions="End"
-                Margin="10,0" /> 
+                Margin="10" />
     </Grid>
 
 </ContentPage>

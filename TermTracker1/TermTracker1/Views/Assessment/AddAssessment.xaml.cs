@@ -30,27 +30,63 @@ namespace TermTracker1.Views.Assessment
             else
             {
                 _isEditMode = false;
-                // Optionally, hide the delete button if not in edit mode
                 deleteButton.IsVisible = false;
             }
         }
 
 
-        public async Task ScheduleAssessmentNotification(NewAssessment assessment)
+        public async Task ScheduleAssessmentNotification(NewAssessment assessment, string notificationTimeOption)
         {
-            var notification = new NotificationRequest
-            {
-                NotificationId = assessment.AssessmentId, // Unique ID for the notification
-                Title = $"Upcoming Assessment: {assessment.Title}",
-                Description = $"Your assessment '{assessment.Title}' is due on {assessment.DueDate:MM/dd/yyyy}.",
-                Schedule = new NotificationRequestSchedule
-                {
-                    NotifyTime = assessment.DueDate.AddDays(-7) // 1 week before the due date
-                }
-            };
+            // Determine the time to notify based on the user's choice
+            TimeSpan timeBeforeNotification;
 
-            await NotificationCenter.Current.Show(notification);
+            switch (notificationTimeOption)
+            {
+                case "1 day before":
+                    timeBeforeNotification = TimeSpan.FromDays(-1);
+                    break;
+                case "2 days before":
+                    timeBeforeNotification = TimeSpan.FromDays(-2);
+                    break;
+                case "1 week before":
+                    timeBeforeNotification = TimeSpan.FromDays(-7);
+                    break;
+                case "2 weeks before":
+                    timeBeforeNotification = TimeSpan.FromDays(-14);
+                    break;
+                default:
+                    timeBeforeNotification = TimeSpan.Zero; // Default case if the option is unrecognized
+                    break;
+            }
+
+            if (timeBeforeNotification != TimeSpan.Zero)
+
+            {
+                var notifyTime = assessment.DueDate.Add(timeBeforeNotification);
+
+                // Ensure we're not setting a notification in the past
+                if (notifyTime > DateTime.Now)
+                {
+                    var notification = new NotificationRequest
+                    {
+                        NotificationId = assessment.AssessmentId,
+                        Title = $"Upcoming Assessment: {assessment.Title}",
+                        Description = $"Your assessment '{assessment.Title}' is due on {assessment.DueDate:MM/dd/yyyy}.",
+                        Schedule = new NotificationRequestSchedule
+                        {
+                            NotifyTime = notifyTime
+                        }
+                    };
+
+                    await NotificationCenter.Current.Show(notification);
+                }
+            }
+            else
+            {
+                await DisplayAlert("Error","Unable to Add Notification.", "Ok");
+            }
         }
+
 
 
         public void SetAssessment(NewAssessment assessment)
@@ -60,8 +96,10 @@ namespace TermTracker1.Views.Assessment
 
             // Pre-fill the entries with the existing assessment data
             title.Text = assessment.Title;
-            dateTakenPicker.Date = assessment.DueDate; // Assuming you're using a DatePicker
+            dateTakenPicker.Date = assessment.DueDate;
             score.Text = assessment.Score.ToString();
+
+            notificationPicker.SelectedItem = assessment.NotificationTimeOption;
 
             // Show the delete button
             deleteButton.IsVisible = true;
@@ -88,15 +126,17 @@ namespace TermTracker1.Views.Assessment
                 return;
             }
 
+            var notificationOption = notificationPicker.SelectedItem as string;
+
             // Create a new Assessment object
             var newAssessment = new NewAssessment
             {
                 Title = titleText,
                 DueDate = dateTaken,
                 Score = parsedScore,
-                // You'll need to set CourseId and Type depending on your logic, passed when navigating to this page
-                CourseId = _courseId, // Placeholder, set this from your navigation parameter
-                Type = _assessmentType
+                CourseId = _courseId,
+                Type = _assessmentType,
+                NotificationTimeOption = notificationOption
 
             };
 
@@ -105,9 +145,14 @@ namespace TermTracker1.Views.Assessment
 
             if (result == 1)
             {
-                await ScheduleAssessmentNotification(newAssessment);
-                await DisplayAlert("Success", "Assessment added and reminder set successfully.", "OK");
-                await Navigation.PopAsync(); // Navigate back to the previous page
+
+                if (!string.IsNullOrEmpty(notificationOption))
+                {
+                    await ScheduleAssessmentNotification(newAssessment, notificationOption);
+                }
+
+                await DisplayAlert("Success", "Assessment updated and reminder updated successfully.", "OK");
+                await Navigation.PopAsync();
             }
             else
             {
@@ -137,17 +182,26 @@ namespace TermTracker1.Views.Assessment
                 return;
             }
 
+            var notificationOption = notificationPicker.SelectedItem as string;
+
             // Update the existing Assessment object
             _existingAssessment.Title = titleText;
             _existingAssessment.DueDate = dateTaken;
             _existingAssessment.Score = parsedScore;
+            _existingAssessment.NotificationTimeOption = notificationOption;
 
             // Save the changes to the database
             var result = await App.DatabaseContext.UpdateAssessmentAsync(_existingAssessment);
 
             if (result == 1)
             {
-                await ScheduleAssessmentNotification(_existingAssessment);
+
+
+                if (!string.IsNullOrEmpty(notificationOption))
+                {
+                    await ScheduleAssessmentNotification(_existingAssessment, notificationOption);
+                }
+
                 await DisplayAlert("Success", "Assessment updated and reminder updated successfully.", "OK");
                 await Navigation.PopAsync(); // Navigate back to the previous page
             }
@@ -175,7 +229,7 @@ namespace TermTracker1.Views.Assessment
             bool isConfirmed = await DisplayAlert("Confirm Delete", "Are you sure you want to delete this assessment?", "Yes", "No");
             if (isConfirmed)
             {
-                // Call your method to delete the assessment
+                // Call method to delete the assessment
                 var result = await App.DatabaseContext.DeleteAssessmentAsync(_existingAssessment);
                 if (result == 1)
                 {

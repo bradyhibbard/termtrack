@@ -1,10 +1,13 @@
+/Users/brady.hibbard/Projects/TermTracker1/TermTracker1/TermTracker1/bin/Debug/netstandard2.0/TermTracker1.deps.json
+/Users/brady.hibbard/Projects/TermTracker1/TermTracker1/TermTracker1/bin/Debug/netstandard2.0/TermTracker1.dll
+/Users/brady.hibbard/Projects/TermTracker1/TermTracker1/TermTracker1/bin/Debug/netstandard2.0/ref/TermTracker1.dll
+/Users/brady.hibbard/Projects/TermTracker1/TermTracker1/TermTracker1/bin/Debug/netstandard2.0/TermTracker1.pdb
 /Users/brady.hibbard/Projects/TermTracker1/TermTracker1/TermTracker1/obj/Debug/netstandard2.0/TermTracker1.csproj.AssemblyReference.cache
 /Users/brady.hibbard/Projects/TermTracker1/TermTracker1/TermTracker1/obj/Debug/netstandard2.0/TermTracker1.GeneratedMSBuildEditorConfig.editorconfig
 /Users/brady.hibbard/Projects/TermTracker1/TermTracker1/TermTracker1/obj/Debug/netstandard2.0/App.xaml.g.cs
 /Users/brady.hibbard/Projects/TermTracker1/TermTracker1/TermTracker1/obj/Debug/netstandard2.0/MainPage.xaml.g.cs
 /Users/brady.hibbard/Projects/TermTracker1/TermTracker1/TermTracker1/obj/Debug/netstandard2.0/Resources/Styles.xaml.g.cs
 /Users/brady.hibbard/Projects/TermTracker1/TermTracker1/TermTracker1/obj/Debug/netstandard2.0/Views/Assessment/AddAssessment.xaml.g.cs
-/Users/brady.hibbard/Projects/TermTracker1/TermTracker1/TermTracker1/obj/Debug/netstandard2.0/Views/Assessment/EditAssessment.xaml.g.cs
 /Users/brady.hibbard/Projects/TermTracker1/TermTracker1/TermTracker1/obj/Debug/netstandard2.0/Views/Courses/AddCoursePage.xaml.g.cs
 /Users/brady.hibbard/Projects/TermTracker1/TermTracker1/TermTracker1/obj/Debug/netstandard2.0/Views/Courses/CourseDetailPage.xaml.g.cs
 /Users/brady.hibbard/Projects/TermTracker1/TermTracker1/TermTracker1/obj/Debug/netstandard2.0/Views/Courses/CourseListPage.xaml.g.cs
@@ -21,10 +24,6 @@
 /Users/brady.hibbard/Projects/TermTracker1/TermTracker1/TermTracker1/obj/Debug/netstandard2.0/TermTracker1.AssemblyInfoInputs.cache
 /Users/brady.hibbard/Projects/TermTracker1/TermTracker1/TermTracker1/obj/Debug/netstandard2.0/TermTracker1.AssemblyInfo.cs
 /Users/brady.hibbard/Projects/TermTracker1/TermTracker1/TermTracker1/obj/Debug/netstandard2.0/TermTracker1.csproj.CoreCompileInputs.cache
-/Users/brady.hibbard/Projects/TermTracker1/TermTracker1/TermTracker1/bin/Debug/netstandard2.0/TermTracker1.deps.json
-/Users/brady.hibbard/Projects/TermTracker1/TermTracker1/TermTracker1/bin/Debug/netstandard2.0/TermTracker1.dll
-/Users/brady.hibbard/Projects/TermTracker1/TermTracker1/TermTracker1/bin/Debug/netstandard2.0/ref/TermTracker1.dll
-/Users/brady.hibbard/Projects/TermTracker1/TermTracker1/TermTracker1/bin/Debug/netstandard2.0/TermTracker1.pdb
 /Users/brady.hibbard/Projects/TermTracker1/TermTracker1/TermTracker1/obj/Debug/netstandard2.0/XamlC.stamp
 /Users/brady.hibbard/Projects/TermTracker1/TermTracker1/TermTracker1/obj/Debug/netstandard2.0/TermTracker1.dll
 /Users/brady.hibbard/Projects/TermTracker1/TermTracker1/TermTracker1/obj/Debug/netstandard2.0/refint/TermTracker1.dll

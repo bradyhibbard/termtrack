@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using TermTracker1.Models;
 using Xamarin.Forms;
 
@@ -6,24 +7,39 @@ namespace TermTracker1.Views.Term
 {
     public partial class TermDatePage : ContentPage
 
-
     {
+        private NewTerm _newTerm;
 
-        private NewTerm _termToEdit;
+        private bool _isEditMode;
 
-        public TermDatePage(NewTerm termToEdit)
+        public TermDatePage(NewTerm newTerm)
         {
             InitializeComponent();
-            _termToEdit = termToEdit;
+            _newTerm = newTerm ?? throw new ArgumentNullException(nameof(newTerm));
 
-            Title = $"Add {_termToEdit.Title} Term Dates";
+            termTitleEntry.Text = _newTerm.Title;
+            startDatePicker.Date = _newTerm.StartDate;
+            endDatePicker.Date = _newTerm.EndDate;
+
+            _isEditMode = true;
         }
 
-        private async void OnSaveClicked(object sender, EventArgs e)
+        public TermDatePage()
         {
+            InitializeComponent();
+            _newTerm = new NewTerm();
+            _isEditMode = false;
+        }
+
+
+        private async Task SaveNewTerm()
+        {
+
+
             // Perform date validation and assignment
             var startDate = startDatePicker.Date;
             var endDate = endDatePicker.Date;
+            string title = termTitleEntry.Text;
 
             if (startDate > endDate)
             {
@@ -31,18 +47,60 @@ namespace TermTracker1.Views.Term
                 return;
             }
 
-            if ((endDate - startDate).TotalDays > (4 * 30)) // 4 months approximation
+            if ((endDate - startDate).TotalDays > (4 * 31)) // 4 months approximation
             {
                 await DisplayAlert("Error", "Term duration must be no more than four months.", "OK");
                 return;
             }
 
             // If validation passes, assign dates and save
-            _termToEdit.StartDate = startDate;
-            _termToEdit.EndDate = endDate;
+            _newTerm.StartDate = startDate;
+            _newTerm.EndDate = endDate;
+            _newTerm.Title = title;
 
-            // Assuming you have a method to add the term to the database
-            var result = await App.DatabaseContext.AddTermAsync(_termToEdit);
+            // Add new term to database
+            var result = await App.DatabaseContext.AddTermAsync(_newTerm);
+
+            if (result == 1)
+            {
+                // If successful, navigate to the term list
+                await DisplayAlert("Success", "Term dates have been set.", "OK");
+                await Navigation.PushAsync(new TermListPage());
+            }
+            else
+            {
+                await DisplayAlert("Error", "There was a problem saving the term dates.", "OK");
+            }
+
+        }
+
+        private async Task EditNewTerm()
+        {
+
+            // Perform date validation and assignment
+            var startDate = startDatePicker.Date;
+            var endDate = endDatePicker.Date;
+            string title = termTitleEntry.Text;
+
+            if (startDate > endDate)
+            {
+                await DisplayAlert("Error", "Start date must be before end date.", "OK");
+                return;
+            }
+
+            if ((endDate - startDate).TotalDays > (4 * 31)) // 4 months approximation
+            {
+                await DisplayAlert("Error", "Term duration must be no more than four months.", "OK");
+                return;
+            }
+
+            // If validation passes, assign dates and save
+            _newTerm.StartDate = startDate;
+            _newTerm.EndDate = endDate;
+            _newTerm.Title = title;
+
+            // Update Term in database
+            var result = await App.DatabaseContext.UpdateTermAsync(_newTerm);
 
             if (result == 1)
             {
@@ -55,5 +113,19 @@ namespace TermTracker1.Views.Term
                 await DisplayAlert("Error", "There was a problem saving the term dates.", "OK");
             }
         }
+
+        private async void OnSaveClicked(object sender, EventArgs e)
+        {
+
+            if (_isEditMode == true)
+            {
+                await EditNewTerm();
+            }
+            else
+            {
+                await SaveNewTerm();
+            }
+        }
+
     }
 }

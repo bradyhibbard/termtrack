@@ -102,10 +102,10 @@ namespace TermTracker1.Views.Courses
 
             if (isConfirmed)
             {
-                // Assuming you have a DeleteTermAsync method in your database context
+                // Delete Term from database
                 var result = await App.DatabaseContext.DeleteTermAsync(SelectedTerm);
 
-                if (result > 0) // In SQLite, a successful delete returns the number of rows affected
+                if (result > 0)
                 {
                     await DisplayAlert("Success", "The term has been deleted.", "OK");
                     // Navigate back to the previous page or refresh the terms list
@@ -116,6 +116,24 @@ namespace TermTracker1.Views.Courses
                     await DisplayAlert("Error", "There was a problem deleting the term.", "OK");
                 }
             }
+        }
+
+        private async void OnEditTermButtonClicked(object sender, EventArgs e)
+        {
+
+            // Retrieve the term details from the selected course
+            var termToEdit = await App.DatabaseContext.GetTermByIdAsync(SelectedTerm.TermId);
+            if (termToEdit != null)
+            {
+                // Navigate to the TermDatePage with the term details
+                var termDatePage = new TermDatePage(termToEdit);
+                await Navigation.PushAsync(termDatePage);
+            }
+            else
+            {
+                await DisplayAlert("Error", "Term details not found.", "OK");
+            }
+           
         }
 
     }

@@ -2001,20 +2001,20 @@
     ]
   },
   "packageFolders": {
-    "/Users/brady.hibbard/.nuget/packages/": {}
+    "/Users/bradyhibbard/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/brady.hibbard/Projects/TermTracker1/TermTracker1/TermTracker1.iOS/TermTracker1.iOS.csproj",
+      "projectUniqueName": "/Users/bradyhibbard/Desktop/To keep/Projects/Projects copy/TermTracker1/TermTracker1/TermTracker1.iOS/TermTracker1.iOS.csproj",
       "projectName": "TermTracker1.iOS",
-      "projectPath": "/Users/brady.hibbard/Projects/TermTracker1/TermTracker1/TermTracker1.iOS/TermTracker1.iOS.csproj",
-      "packagesPath": "/Users/brady.hibbard/.nuget/packages/",
-      "outputPath": "/Users/brady.hibbard/Projects/TermTracker1/TermTracker1/TermTracker1.iOS/obj/",
+      "projectPath": "/Users/bradyhibbard/Desktop/To keep/Projects/Projects copy/TermTracker1/TermTracker1/TermTracker1.iOS/TermTracker1.iOS.csproj",
+      "packagesPath": "/Users/bradyhibbard/.nuget/packages/",
+      "outputPath": "/Users/bradyhibbard/Desktop/To keep/Projects/Projects copy/TermTracker1/TermTracker1/TermTracker1.iOS/obj/",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
-        "/Users/brady.hibbard/.config/NuGet/NuGet.Config"
+        "/Users/bradyhibbard/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "xamarinios10"
@@ -2025,8 +2025,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "/Users/brady.hibbard/Projects/TermTracker1/TermTracker1/TermTracker1/TermTracker1.csproj": {
-              "projectPath": "/Users/brady.hibbard/Projects/TermTracker1/TermTracker1/TermTracker1/TermTracker1.csproj"
+            "/Users/bradyhibbard/Desktop/To keep/Projects/Projects copy/TermTracker1/TermTracker1/TermTracker1/TermTracker1.csproj": {
+              "projectPath": "/Users/bradyhibbard/Desktop/To keep/Projects/Projects copy/TermTracker1/TermTracker1/TermTracker1/TermTracker1.csproj"
             }
           }
         }

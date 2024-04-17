@@ -28,6 +28,8 @@ namespace TermTracker1.Models
 
         public string Description { get; set; }
 
+        public string NotificationTimeOption { get; set; }
+
         public string Notes { get; set; } // Optional
 
         // Constructor for creating a new course

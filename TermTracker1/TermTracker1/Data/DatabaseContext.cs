@@ -101,6 +101,13 @@ public class DatabaseContext
         return await _database.DeleteAsync(term).ConfigureAwait(false);
     }
 
+    public async Task<NewTerm> GetTermByIdAsync(int id)
+    {
+        // Retrieve a specific term by ID
+        return await _database.Table<NewTerm>().FirstOrDefaultAsync(t => t.TermId == id);
+    }
+
+
     // CRUD operations for Courses
 
     public async Task<List<Course>> GetCoursesAsync()

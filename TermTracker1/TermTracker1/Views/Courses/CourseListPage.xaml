@@ -11,6 +11,7 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
         <Label Text="Term Course Schedule"
@@ -49,6 +50,15 @@
                 Margin="20,0"
                 Grid.Row="5"/>
 
+        <!-- ADD A COURSE button with black background -->
+        <Button Text="EDIT TERM"
+                x:Name="editTermButton"
+                BackgroundColor="Black" 
+                TextColor="White"
+                Clicked="OnEditTermButtonClicked"
+                Margin="20,0"
+                Grid.Row="6"/>
+
         <!-- DELETE TERM button with white background and red text -->
         <Button Text="DELETE TERM" 
                 BackgroundColor="White" 
@@ -57,6 +67,6 @@
                 BorderWidth="2"
                 Clicked="OnDeleteTermButtonClicked"
                 Margin="20,0,20,20"
-                Grid.Row="6"/>
+                Grid.Row="7"/>
     </Grid>
 </ContentPage>

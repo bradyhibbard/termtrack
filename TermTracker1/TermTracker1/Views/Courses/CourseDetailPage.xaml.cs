@@ -30,13 +30,11 @@ namespace TermTracker1.Views.Courses
 
         private async Task LoadCourseDetailsAsync()
         {
-            // Assuming you have a method to get the latest details of the course
-            // And your selectedCourse has an Id property to identify the course
             var updatedCourse = await App.DatabaseContext.GetCourseByIdAsync(((Course)BindingContext).CourseId);
 
             if (updatedCourse != null)
             {
-                BindingContext = updatedCourse; // This should update your UI if the properties are correctly data-bound
+                BindingContext = updatedCourse;
             }
 
             // Load assessments
@@ -59,7 +57,7 @@ namespace TermTracker1.Views.Courses
             bool isConfirmed = await DisplayAlert("Confirm Delete", "Are you sure you want to delete this course?", "Yes", "No");
             if (isConfirmed)
             {
-                // Assuming you have a method in your DatabaseContext to delete a course by its ID
+
                 var result = await App.DatabaseContext.DeleteCourseAsync(BindingContext as Course);
 
                 if (result > 0) // Check if the delete was successful
@@ -76,12 +74,12 @@ namespace TermTracker1.Views.Courses
 
         private async void OnNotesClicked(object sender, EventArgs e)
         {
-            // Assuming 'NotesListPage' requires the current course's ID to display the relevant notes
+
             var course = BindingContext as Course; // Cast the BindingContext to your Course model
             if (course != null)
             {
-                var notesPage = new NotesListPage(course.CourseId); // Create the NotesListPage with the course's ID
-                await Navigation.PushAsync(notesPage); // Push the NotesListPage onto the navigation stack
+                var notesPage = new NotesListPage(course.CourseId);
+                await Navigation.PushAsync(notesPage);
             }
             else
             {

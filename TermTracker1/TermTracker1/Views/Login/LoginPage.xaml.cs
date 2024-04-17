@@ -26,8 +26,7 @@ namespace TermTracker1.Views.Login
             string enteredUsername = usernameEntry.Text;
             string enteredPassword = passwordEntry.Text;
 
-            // Assuming you have a method in DatabaseContext like:
-            // public Task<User> GetUserByCredentialsAsync(string username, string password);
+            //User Credentials
             User user = await App.DatabaseContext.GetUserByCredentialsAsync(enteredUsername, enteredPassword);
 
             if (user != null)

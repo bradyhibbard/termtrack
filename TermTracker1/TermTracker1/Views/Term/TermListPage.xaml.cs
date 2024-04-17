@@ -49,7 +49,7 @@ namespace TermTracker1.Views.Term
 
         private async void OnAddTermButtonClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new AddTermPage());
+            await Navigation.PushAsync(new TermDatePage());
         }
     }
 }

@@ -26,6 +26,8 @@ namespace TermTracker1.Models
         // You might want to use an enum for assessment types
         public AssessmentType Type { get; set; }
 
+        public string NotificationTimeOption { get; set; }
+
         public int Score { get; set; }
 
         public string Notes { get; set; } // Optional

@@ -19,7 +19,7 @@ namespace TermTracker1.Views.Welcome
 		private async void OnAddTermButtonClicked(object sender, EventArgs e)
 		{
             // Logic for adding a new term
-            await Navigation.PushAsync(new AddTermPage());
+            await Navigation.PushAsync(new TermDatePage());
         }
 
         protected override async void OnAppearing()
@@ -30,7 +30,7 @@ namespace TermTracker1.Views.Welcome
 
         private async Task CheckAndNavigate()
         {
-            var terms = await App.DatabaseContext.GetTermsAsync(); // Replace with your actual method to retrieve terms
+            var terms = await App.DatabaseContext.GetTermsAsync();
 
             if (terms.Any())
             {

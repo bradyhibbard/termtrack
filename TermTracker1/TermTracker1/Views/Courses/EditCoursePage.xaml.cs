@@ -5,6 +5,8 @@ using TermTracker1.Models;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using Plugin.LocalNotification;
+
 namespace TermTracker1.Views.Courses
 
 
@@ -27,6 +29,7 @@ namespace TermTracker1.Views.Courses
             instructorPhone.Text = _courseToUpdate.InstructorPhone;
             descriptionEditor.Text = _courseToUpdate.Description;
             statusPicker.SelectedItem = _courseToUpdate.Status;
+            notificationPicker.SelectedItem = _courseToUpdate.NotificationTimeOption;
         }
 
         public async void UpdateCourseButton_Clicked(object sender, EventArgs e)
@@ -53,6 +56,7 @@ namespace TermTracker1.Views.Courses
             _courseToUpdate.InstructorEmail = instructorEmail.Text;
             _courseToUpdate.Description = descriptionEditor.Text;
             _courseToUpdate.Status = statusPicker.SelectedItem.ToString();
+            _courseToUpdate.NotificationTimeOption = notificationPicker.SelectedItem.ToString();
 
             try
             {
@@ -61,6 +65,9 @@ namespace TermTracker1.Views.Courses
 
                 if (result == 1)
                 {
+                    string notificationOption = notificationPicker.SelectedItem.ToString();
+                    await ScheduleCourseNotification(_courseToUpdate, notificationOption);
+
                     await DisplayAlert("Success", "Course Updated Successfully.", "OK");
                 }
                 else
@@ -75,6 +82,59 @@ namespace TermTracker1.Views.Courses
             {
                 // If there was an error updating the course, inform the user
                 await DisplayAlert("Update Failed", "An error occurred while updating the course information: " + ex.Message, "OK");
+            }
+        }
+
+        private async Task ScheduleCourseNotification(Course course, string notificationTimeOption)
+        {
+            // Determine the time to notify based on the user's choice
+            TimeSpan timeBeforeNotification;
+            switch (notificationTimeOption)
+            {
+                case "1 day before":
+                    timeBeforeNotification = TimeSpan.FromDays(-1);
+                    break;
+                case "2 days before":
+                    timeBeforeNotification = TimeSpan.FromDays(-2);
+                    break;
+                case "1 week before":
+                    timeBeforeNotification = TimeSpan.FromDays(-7);
+                    break;
+                case "2 weeks before":
+                    timeBeforeNotification = TimeSpan.FromDays(-14);
+                    break;
+                default:
+                    // Handle the default case, maybe log an error or set a default time
+                    timeBeforeNotification = TimeSpan.Zero;
+                    break;
+            }
+
+            if (timeBeforeNotification != TimeSpan.Zero)
+            {
+                DateTime notifyTime = course.StartDate.Add(timeBeforeNotification);
+
+                // Ensure we're not setting a notification in the past
+                if (notifyTime > DateTime.Now)
+                {
+                    // Create and schedule your notification
+                    var notification = new NotificationRequest
+                    {
+                        NotificationId = course.CourseId,
+                        Title = $"Upcoming Course: {course.Title}",
+                        Description = $"Your course '{course.Title}' starts on {course.StartDate:MM/dd/yyyy}.",
+                        Schedule = new NotificationRequestSchedule
+                        {
+                            NotifyTime = notifyTime
+                        }
+                    };
+
+                    // Schedule the notification
+                    await NotificationCenter.Current.Show(notification);
+                }
+            }
+            else
+            {
+                await DisplayAlert("Error", "Unable to Set Alert", "OK");
             }
         }
 

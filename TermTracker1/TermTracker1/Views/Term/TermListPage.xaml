@@ -10,6 +10,10 @@
             <!-- Dynamically added term buttons will go here -->
         </StackLayout>
         
-        <Button Text="ADD A TERM" Clicked="OnAddTermButtonClicked"/>
+        <Button Text="ADD A TERM"
+                BackgroundColor="Black" 
+                TextColor="White"
+                Margin="0,0,0,10"
+                Clicked="OnAddTermButtonClicked"/>
     </StackLayout>
 </ContentPage>

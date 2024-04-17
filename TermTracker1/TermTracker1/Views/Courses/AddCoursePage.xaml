@@ -2,30 +2,46 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TermTracker1.Views.Courses.AddCoursePage"
              Title="Add a Class">
-    <StackLayout Padding="20">
+    <Grid Padding="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
 
-        <Entry x:Name="courseTitleEntry" Placeholder="e.g., Biochemistry" />
-
-        <DatePicker x:Name="startDatePicker" />
-        <DatePicker x:Name="endDatePicker" />
-
-        <Entry x:Name="instructorName" Placeholder="Course Instructor Name" />
-        <Entry x:Name="instructorEmail" Placeholder="Course Instructor Email" Keyboard="Email" />
-        <Entry x:Name="instructorPhone" Placeholder="Course Instructor Phone" Keyboard="Telephone" />
-
-        <Editor x:Name="classDescription" Placeholder="Class Description" />
-
-        <Picker x:Name="statusPicker" Title="Class Status">
-            <Picker.ItemsSource>
-                <x:Array Type="{x:Type x:String}">
-                    <x:String>Plan to take</x:String>
-                    <x:String>Enroll</x:String>
-                    <x:String>Drop</x:String>
-                </x:Array>
+        <ScrollView Grid.Row="0">
+            <StackLayout>
+                <!-- All your input fields here -->
+                <Entry x:Name="courseTitleEntry" Placeholder="e.g., Biochemistry" />
+                <DatePicker x:Name="startDatePicker" />
+                <DatePicker x:Name="endDatePicker" />
+                <Entry x:Name="instructorName" Placeholder="Course Instructor Name" />
+                <Entry x:Name="instructorEmail" Placeholder="Course Instructor Email" Keyboard="Email" />
+                <Entry x:Name="instructorPhone" Placeholder="Course Instructor Phone" Keyboard="Telephone" />
+                <Editor x:Name="classDescription" Placeholder="Class Description" />
+                <Picker x:Name="statusPicker" Title="Class Status">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Plan to take</x:String>
+                            <x:String>Enroll</x:String>
+                            <x:String>Drop</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+                <Label Text="Set Notification" FontSize="Medium" />
+                <Picker x:Name="notificationPicker" Title="Choose notification time">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>1 day before</x:String>
+                            <x:String>2 days before</x:String>
+                            <x:String>1 week before</x:String>
+                            <x:String>2 weeks before</x:String>
+                        </x:Array>
             </Picker.ItemsSource>
-        </Picker>
+                </Picker>
+            </StackLayout>
+        </ScrollView>
 
-        <Button Text="ADD CLASS" BackgroundColor="Black" TextColor="White" Clicked="AddClassButton_Clicked" />
-
-    </StackLayout>
+        <Button Grid.Row="1" Text="ADD CLASS" BackgroundColor="Black" TextColor="White" 
+                VerticalOptions="End" Clicked="AddClassButton_Clicked" />
+    </Grid>
 </ContentPage>
