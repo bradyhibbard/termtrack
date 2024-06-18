@@ -4710,35 +4710,47 @@
     ]
   },
   "packageFolders": {
-    "/Users/bradyhibbard/.nuget/packages/": {}
+    "C:\\Users\\sbhib\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/bradyhibbard/Desktop/To keep/Projects/Projects copy/TermTracker1/TermTracker1/TermTracker1.Android/TermTracker1.Android.csproj",
+      "projectUniqueName": "C:\\Users\\sbhib\\Source\\Repos\\termtrack\\TermTracker1\\TermTracker1.Android\\TermTracker1.Android.csproj",
       "projectName": "TermTracker1.Android",
-      "projectPath": "/Users/bradyhibbard/Desktop/To keep/Projects/Projects copy/TermTracker1/TermTracker1/TermTracker1.Android/TermTracker1.Android.csproj",
-      "packagesPath": "/Users/bradyhibbard/.nuget/packages/",
-      "outputPath": "/Users/bradyhibbard/Desktop/To keep/Projects/Projects copy/TermTracker1/TermTracker1/TermTracker1.Android/obj/",
+      "projectPath": "C:\\Users\\sbhib\\Source\\Repos\\termtrack\\TermTracker1\\TermTracker1.Android\\TermTracker1.Android.csproj",
+      "packagesPath": "C:\\Users\\sbhib\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\sbhib\\Source\\Repos\\termtrack\\TermTracker1\\TermTracker1.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "/Users/bradyhibbard/.config/NuGet/NuGet.Config"
+        "C:\\Users\\sbhib\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "monoandroid13.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "monoandroid13.0": {
           "projectReferences": {
-            "/Users/bradyhibbard/Desktop/To keep/Projects/Projects copy/TermTracker1/TermTracker1/TermTracker1/TermTracker1.csproj": {
-              "projectPath": "/Users/bradyhibbard/Desktop/To keep/Projects/Projects copy/TermTracker1/TermTracker1/TermTracker1/TermTracker1.csproj"
+            "C:\\Users\\sbhib\\Source\\Repos\\termtrack\\TermTracker1\\TermTracker1\\TermTracker1.csproj": {
+              "projectPath": "C:\\Users\\sbhib\\Source\\Repos\\termtrack\\TermTracker1\\TermTracker1\\TermTracker1.csproj"
             }
           }
         }
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -4765,7 +4777,7 @@
       "code": "NU1605",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Detected package downgrade: Xamarin.AndroidX.RecyclerView from 1.2.1.5 to 1.2.1.1. Reference the package directly from the project to select a different version. \n TermTracker1.Android -> Xamarin.Forms 5.0.0.2662 -> Xamarin.AndroidX.Preference 1.1.1.13 -> Xamarin.AndroidX.RecyclerView (>= 1.2.1.5) \n TermTracker1.Android -> Xamarin.Forms 5.0.0.2662 -> Xamarin.AndroidX.RecyclerView (>= 1.2.1.1 && < 1.4.0)",
+      "message": "Detected package downgrade: Xamarin.AndroidX.RecyclerView from 1.2.1.5 to 1.2.1.1. Reference the package directly from the project to select a different version. \r\n TermTracker1.Android -> Xamarin.Forms 5.0.0.2662 -> Xamarin.AndroidX.Preference 1.1.1.13 -> Xamarin.AndroidX.RecyclerView (>= 1.2.1.5) \r\n TermTracker1.Android -> Xamarin.Forms 5.0.0.2662 -> Xamarin.AndroidX.RecyclerView (>= 1.2.1.1 && < 1.4.0)",
       "libraryId": "Xamarin.AndroidX.RecyclerView",
       "targetGraphs": [
         "MonoAndroid,Version=v13.0"

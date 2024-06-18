@@ -1081,24 +1081,32 @@
     ]
   },
   "packageFolders": {
-    "/Users/bradyhibbard/.nuget/packages/": {}
+    "C:\\Users\\sbhib\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/bradyhibbard/Desktop/To keep/Projects/Projects copy/TermTracker1/TermTracker1/TermTracker1/TermTracker1.csproj",
+      "projectUniqueName": "C:\\Users\\sbhib\\Source\\Repos\\termtrack\\TermTracker1\\TermTracker1\\TermTracker1.csproj",
       "projectName": "TermTracker1",
-      "projectPath": "/Users/bradyhibbard/Desktop/To keep/Projects/Projects copy/TermTracker1/TermTracker1/TermTracker1/TermTracker1.csproj",
-      "packagesPath": "/Users/bradyhibbard/.nuget/packages/",
-      "outputPath": "/Users/bradyhibbard/Desktop/To keep/Projects/Projects copy/TermTracker1/TermTracker1/TermTracker1/obj/",
+      "projectPath": "C:\\Users\\sbhib\\Source\\Repos\\termtrack\\TermTracker1\\TermTracker1\\TermTracker1.csproj",
+      "packagesPath": "C:\\Users\\sbhib\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\sbhib\\Source\\Repos\\termtrack\\TermTracker1\\TermTracker1\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "/Users/bradyhibbard/.config/NuGet/NuGet.Config"
+        "C:\\Users\\sbhib\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -1111,6 +1119,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -1154,11 +1167,12 @@
           "net47",
           "net471",
           "net472",
-          "net48"
+          "net48",
+          "net481"
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "/Users/bradyhibbard/Library/Caches/VisualStudio/17.0/MSBuild/24836_3/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204\\RuntimeIdentifierGraph.json"
       }
     }
   }

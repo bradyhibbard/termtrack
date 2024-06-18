@@ -59,3 +59,34 @@
 /Users/bradyhibbard/Desktop/To keep/Projects/Projects copy/TermTracker1/TermTracker1/TermTracker1/obj/Release/netstandard2.0/TermTracker1.dll
 /Users/bradyhibbard/Desktop/To keep/Projects/Projects copy/TermTracker1/TermTracker1/TermTracker1/obj/Release/netstandard2.0/refint/TermTracker1.dll
 /Users/bradyhibbard/Desktop/To keep/Projects/Projects copy/TermTracker1/TermTracker1/TermTracker1/obj/Release/netstandard2.0/TermTracker1.pdb
+C:\Users\sbhib\Source\Repos\termtrack\TermTracker1\TermTracker1\bin\Release\netstandard2.0\TermTracker1.deps.json
+C:\Users\sbhib\Source\Repos\termtrack\TermTracker1\TermTracker1\bin\Release\netstandard2.0\TermTracker1.dll
+C:\Users\sbhib\Source\Repos\termtrack\TermTracker1\TermTracker1\bin\Release\netstandard2.0\ref\TermTracker1.dll
+C:\Users\sbhib\Source\Repos\termtrack\TermTracker1\TermTracker1\bin\Release\netstandard2.0\TermTracker1.pdb
+C:\Users\sbhib\Source\Repos\termtrack\TermTracker1\TermTracker1\obj\Release\netstandard2.0\TermTracker1.csproj.AssemblyReference.cache
+C:\Users\sbhib\Source\Repos\termtrack\TermTracker1\TermTracker1\obj\Release\netstandard2.0\TermTracker1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sbhib\Source\Repos\termtrack\TermTracker1\TermTracker1\obj\Release\netstandard2.0\App.xaml.g.cs
+C:\Users\sbhib\Source\Repos\termtrack\TermTracker1\TermTracker1\obj\Release\netstandard2.0\MainPage.xaml.g.cs
+C:\Users\sbhib\Source\Repos\termtrack\TermTracker1\TermTracker1\obj\Release\netstandard2.0\Resources\Styles.xaml.g.cs
+C:\Users\sbhib\Source\Repos\termtrack\TermTracker1\TermTracker1\obj\Release\netstandard2.0\Views\Assessment\AddAssessment.xaml.g.cs
+C:\Users\sbhib\Source\Repos\termtrack\TermTracker1\TermTracker1\obj\Release\netstandard2.0\Views\Courses\AddCoursePage.xaml.g.cs
+C:\Users\sbhib\Source\Repos\termtrack\TermTracker1\TermTracker1\obj\Release\netstandard2.0\Views\Courses\CourseDetailPage.xaml.g.cs
+C:\Users\sbhib\Source\Repos\termtrack\TermTracker1\TermTracker1\obj\Release\netstandard2.0\Views\Courses\CourseListPage.xaml.g.cs
+C:\Users\sbhib\Source\Repos\termtrack\TermTracker1\TermTracker1\obj\Release\netstandard2.0\Views\Courses\EditCoursePage.xaml.g.cs
+C:\Users\sbhib\Source\Repos\termtrack\TermTracker1\TermTracker1\obj\Release\netstandard2.0\Views\Login\LoginPage.xaml.g.cs
+C:\Users\sbhib\Source\Repos\termtrack\TermTracker1\TermTracker1\obj\Release\netstandard2.0\Views\Notes\NotesDetails.xaml.g.cs
+C:\Users\sbhib\Source\Repos\termtrack\TermTracker1\TermTracker1\obj\Release\netstandard2.0\Views\Notes\NotesListPage.xaml.g.cs
+C:\Users\sbhib\Source\Repos\termtrack\TermTracker1\TermTracker1\obj\Release\netstandard2.0\Views\Notes\NotesPage.xaml.g.cs
+C:\Users\sbhib\Source\Repos\termtrack\TermTracker1\TermTracker1\obj\Release\netstandard2.0\Views\SignUp\SignUpPage.xaml.g.cs
+C:\Users\sbhib\Source\Repos\termtrack\TermTracker1\TermTracker1\obj\Release\netstandard2.0\Views\Term\AddTermPage.xaml.g.cs
+C:\Users\sbhib\Source\Repos\termtrack\TermTracker1\TermTracker1\obj\Release\netstandard2.0\Views\Term\TermDatePage.xaml.g.cs
+C:\Users\sbhib\Source\Repos\termtrack\TermTracker1\TermTracker1\obj\Release\netstandard2.0\Views\Term\TermListPage.xaml.g.cs
+C:\Users\sbhib\Source\Repos\termtrack\TermTracker1\TermTracker1\obj\Release\netstandard2.0\Views\Welcome\WelcomePage.xaml.g.cs
+C:\Users\sbhib\Source\Repos\termtrack\TermTracker1\TermTracker1\obj\Release\netstandard2.0\TermTracker1.AssemblyInfoInputs.cache
+C:\Users\sbhib\Source\Repos\termtrack\TermTracker1\TermTracker1\obj\Release\netstandard2.0\TermTracker1.AssemblyInfo.cs
+C:\Users\sbhib\Source\Repos\termtrack\TermTracker1\TermTracker1\obj\Release\netstandard2.0\TermTracker1.csproj.CoreCompileInputs.cache
+C:\Users\sbhib\Source\Repos\termtrack\TermTracker1\TermTracker1\obj\Release\netstandard2.0\TermTracker1.sourcelink.json
+C:\Users\sbhib\Source\Repos\termtrack\TermTracker1\TermTracker1\obj\Release\netstandard2.0\XamlC.stamp
+C:\Users\sbhib\Source\Repos\termtrack\TermTracker1\TermTracker1\obj\Release\netstandard2.0\TermTracker1.dll
+C:\Users\sbhib\Source\Repos\termtrack\TermTracker1\TermTracker1\obj\Release\netstandard2.0\refint\TermTracker1.dll
+C:\Users\sbhib\Source\Repos\termtrack\TermTracker1\TermTracker1\obj\Release\netstandard2.0\TermTracker1.pdb
